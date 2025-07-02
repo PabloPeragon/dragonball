@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7B26D4822E159D3300987F89 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7B26D4812E159D3300987F89 /* CombineCocoa */; };
+		7B3052052E153A4900CBCE1A /* KcLibraryswift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B3052042E153A4900CBCE1A /* KcLibraryswift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		7B5A195D2E06BA4600BD7E9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -60,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B26D4822E159D3300987F89 /* CombineCocoa in Frameworks */,
+				7B3052052E153A4900CBCE1A /* KcLibraryswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +126,8 @@
 			);
 			name = AppDragonBall;
 			packageProductDependencies = (
+				7B3052042E153A4900CBCE1A /* KcLibraryswift */,
+				7B26D4812E159D3300987F89 /* CombineCocoa */,
 			);
 			productName = AppDragonBall;
 			productReference = 7B5A19462E06BA4400BD7E9E /* AppDragonBall.app */;
@@ -199,6 +208,10 @@
 			);
 			mainGroup = 7B5A193D2E06BA4400BD7E9E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7B3052032E153A4900CBCE1A /* XCRemoteSwiftPackageReference "KcLibraryswift" */,
+				7B26D4802E159D3300987F89 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7B5A19472E06BA4400BD7E9E /* Products */;
 			projectDirPath = "";
@@ -562,6 +575,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7B26D4802E159D3300987F89 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+		7B3052032E153A4900CBCE1A /* XCRemoteSwiftPackageReference "KcLibraryswift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joselbe1976/KcLibraryswift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7B26D4812E159D3300987F89 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B26D4802E159D3300987F89 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+		7B3052042E153A4900CBCE1A /* KcLibraryswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B3052032E153A4900CBCE1A /* XCRemoteSwiftPackageReference "KcLibraryswift" */;
+			productName = KcLibraryswift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7B5A193E2E06BA4400BD7E9E /* Project object */;
 }
