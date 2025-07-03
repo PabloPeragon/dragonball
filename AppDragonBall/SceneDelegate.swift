@@ -39,10 +39,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     }
                 case .success:
                     //la home
-                    print("ir a la home")
+                    DispatchQueue.main.async {
+                        print("Vamos pal home")
+                        nav = UINavigationController(rootViewController: HomeViewController(appState: self.appState))
+                        self.window!.rootViewController = nav
+                        self.window!.makeKeyAndVisible()
+                    }
                 case .error:
                     //error
-                    print("error")
+                    DispatchQueue.main.async {
+                        print("Vamos pal error")
+                        nav = UINavigationController(rootViewController: ErrorViewController(appState: self.appState, error: "Error usuario y/o Clave"))
+                        self.window!.rootViewController = nav
+                        self.window!.makeKeyAndVisible()
+                    }
                 }
             })
     }
