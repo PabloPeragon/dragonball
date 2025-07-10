@@ -43,6 +43,8 @@ class HerosTableViewController: UITableViewController {
         
         //binding de la vista del viewModel
         binding()
+        
+        tableView.backgroundColor = .baseTable
     }
     
     @objc func closeSession() {
@@ -89,6 +91,6 @@ class HerosTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 210
     }
 }
