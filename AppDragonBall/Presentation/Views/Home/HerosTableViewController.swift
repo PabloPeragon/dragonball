@@ -38,13 +38,24 @@ class HerosTableViewController: UITableViewController {
         //titulo en el navigation controller
         self.title = "Lista de Heroes"
         
+        //Color del titulo Lista de Horoes
+        if let textNameList = self.navigationController?.navigationBar {
+            if let customColor = UIColor(named: "textColor") {
+                textNameList.titleTextAttributes = [NSAttributedString.Key.foregroundColor: customColor]
+            }
+        }
+        
         //añadir un boton para cerrar sesion
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeSession))
         
         //binding de la vista del viewModel
         binding()
         
+        //color del fondo de la tabla
         tableView.backgroundColor = .baseTable
+        
+        //color de los botones de navegacion
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "textColor")
     }
     
     @objc func closeSession() {
@@ -92,5 +103,13 @@ class HerosTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 210
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let hero = viewModel.herosData[indexPath.row]
+        
+        //Cargo el controlador sobre el navegador y le pasamos eh heroe y el viewModel. La vista lanzara la carga necesaria.
+        let vm = TransformationsTableViewController(HeroSelected: hero, vmHeros: self.viewModel)
+        self.navigationController?.pushViewController(vm, animated: true)
     }
 }

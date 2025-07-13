@@ -11,6 +11,8 @@ import Combine
 
 @MainActor final class HerosViewModel: ObservableObject {
     @Published var herosData = [HerosModel]()
+    //Transformaciones de un heroe seleccionado
+    @Published var transformationHeroData = [TransformationModel]()
     
     private var userCaseHeros: herosUseCaseProtocol
     
@@ -34,5 +36,20 @@ import Combine
         }
          */
         
+    }
+    
+    //Carga transformaciones de un hero
+    
+    func getHeroTransformation(idHero: String) async {
+        
+        let data = await userCaseHeros.getHeroTransformations(idHero: idHero)
+        //self.transformationHeroData = data
+        
+        
+        //asigno en el hilo pricipal para la act. de la UI
+        DispatchQueue.main.async {
+            self.transformationHeroData = data
+        }
+         
     }
 }

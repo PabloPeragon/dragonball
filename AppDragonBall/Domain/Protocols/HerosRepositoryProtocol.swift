@@ -9,4 +9,5 @@ import Foundation
 
 protocol HerosRepositoryProtocol {
     func getHeros(filter: String) async -> [HerosModel]
+    func getHeroTransformations(idHero: String) async -> [TransformationModel]
 }

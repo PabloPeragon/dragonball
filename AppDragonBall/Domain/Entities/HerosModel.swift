@@ -13,6 +13,10 @@ struct HerosModel: Codable {
     let description: String
     let photo: String
     let name: String
+    
+    func getFullName() -> String {
+        return "\(name)  $"
+    }
 }
 
 

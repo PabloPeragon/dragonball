@@ -7,24 +7,31 @@
 
 import Foundation
 
-protocol herosUseCaseProtocol {
+protocol herosUseCaseProtocol{
     var repo: HerosRepositoryProtocol {get set}
     func getHeros(filter: String) async -> [HerosModel]
+    func getHeroTransformations(idHero: String) async -> [TransformationModel]
+    
 }
 
 //real
-final class HeroUseCase: herosUseCaseProtocol {
+final class HeroUseCase: herosUseCaseProtocol{
     
     var repo: HerosRepositoryProtocol
     
-    init(repo: HerosRepositoryProtocol = HerosRepository(network: NetworkHeros())) {
+    init(repo: HerosRepositoryProtocol = HerosRepository(network: NetworkHeros())){
         self.repo = repo
     }
-    
+
     func getHeros(filter: String) async -> [HerosModel] {
         await repo.getHeros(filter: filter)
     }
+    
+    func getHeroTransformations(idHero: String) async -> [TransformationModel] {
+        await repo.getHeroTransformations(idHero: idHero)
+    }
 }
+
 
 //Fake
 final class HeroUseCaseFake: herosUseCaseProtocol {
@@ -37,5 +44,9 @@ final class HeroUseCaseFake: herosUseCaseProtocol {
     
     func getHeros(filter: String) async -> [HerosModel] {
         await repo.getHeros(filter: filter)
+    }
+    
+    func getHeroTransformations(idHero: String) async -> [TransformationModel] {
+        await repo.getHeroTransformations(idHero: idHero)
     }
 }

@@ -11,7 +11,7 @@ import Combine
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var appState : AppState = AppState() //Aqui el view model global
+    var appState : AppState = AppState(loginUseCase: LoginUseCase()) //Aqui el view model global
     var cancelable: AnyCancellable?
 
 

@@ -19,6 +19,10 @@ final class HerosRepository: HerosRepositoryProtocol {
     func getHeros(filter: String) async -> [HerosModel] {
         return await Network.getHeros(filter: filter)
     }
+    
+    func getHeroTransformations(idHero: String) async -> [TransformationModel] {
+        await Network.getHeroTransformations(idHero: idHero)
+    }
 }
 
 
@@ -34,5 +38,9 @@ final class HerosRepositoryFake: HerosRepositoryProtocol {
     
     func getHeros(filter: String) async -> [HerosModel] {
         return await Network.getHeros(filter: filter)
+    }
+    
+    func getHeroTransformations(idHero: String) async -> [TransformationModel] {
+        await Network.getHeroTransformations(idHero: idHero)
     }
 }
