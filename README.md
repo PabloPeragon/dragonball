@@ -1,2 +1,1 @@
-App iOS de Dragon Ball con patrón de diseño MVVM, desarrollada con UIkit usando una api web. Programación reactiva con Combine y Async Await para las llamadas de red.
-CombineCocoa para las vistas.
+App iOS de Dragon Ball con patrón de diseño MVVM, desarrollada con UIkit usando una api web. Programación reactiva con Combine y Async Await para las llamadas de red. CombineCocoa para las vistas. Para poder ver su funcionamiento descargatela en zip y la ejecutas en xcode. Hay la puedes ver en el simulador o te la pasas a tu iphone. Si tienes cualquier sugerencia para mejorar la app tanto visual como su funcionamiento por favor no dudes en contactar conmigo.
